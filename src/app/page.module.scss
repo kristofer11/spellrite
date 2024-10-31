@@ -36,9 +36,9 @@
     background-color: var(--primaryAccent);
     outline: none;
     border: none;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 1rem;
     border-radius: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
@@ -83,5 +83,10 @@ gap: 2rem;
     .main {
         margin: 0px;
         border-radius: 0;
+    }
+    .testButton {
+  
+        font-size: 1rem;
+    
     }
 }
