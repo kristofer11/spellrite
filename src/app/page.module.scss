@@ -10,7 +10,7 @@
     width: 500px;
     height: 700px;
     max-width: 100vw;
-    max-height: 100vh;
+    // max-height: 100vh;
     padding: 2rem;
     margin: 2rem;
     display: flex;
@@ -36,7 +36,7 @@
     background-color: var(--primaryAccent);
     outline: none;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
     font-size: 2rem;
     cursor: pointer;
@@ -47,6 +47,10 @@
         margin: 1rem;
     }
 }
+.testButtonDiv {
+display: flex;
+gap: 2rem;
+}
 
 .testButtonList {
     // display: grid;
@@ -55,7 +59,7 @@
     // margin-top: 4rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 4rem;
 }
 

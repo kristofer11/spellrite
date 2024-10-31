@@ -236,32 +236,97 @@ const Page = () => {
 
     };
 
+    // useEffect(() => {
+    //     const synth = window.speechSynthesis;
+
+    //     const handleVoicesChanged = () => {
+    //         const availableVoices = synth.getVoices();
+    //         setVoices(availableVoices);
+
+    //         // List of voices to try in priority order
+    //         const preferredVoices = [
+    //             'Google en-US Wavenet-A',
+    //             'Samantha',               // iOS/Safari
+    //             'Microsoft Zira Desktop', // Edge/Windows
+    //             'Microsoft David Desktop'
+    //         ];
+
+    //         // Find the first available voice from the preferred list
+    //         const selected = availableVoices.find(voice => preferredVoices.includes(voice.name))
+    //             || availableVoices.find(voice => voice.lang === 'en-US'); // Fallback to any en-US voice
+
+    //         setSelectedVoice(selected);
+    //         console.log(selectedVoice);
+    //     };
+
+    //     if (synth.onvoiceschanged !== undefined) {
+    //         synth.onvoiceschanged = handleVoicesChanged;
+    //     }
+    //     handleVoicesChanged();
+    //     console.log("Selected Voice: " + selectedVoice);
+    //     return () => {
+    //         synth.onvoiceschanged = null;
+    //     };
+    // }, []);
+
+    // useEffect(() => {
+    //     if (isTesting && inputRef.current) {
+    //         inputRef.current.focus();
+    //     }
+    // }, [isTesting]);
+
+
     useEffect(() => {
-        const handleVoicesChanged = () => {
-            const availableVoices = window.speechSynthesis.getVoices();
+        const synth = window.speechSynthesis;
+
+        const loadVoices = () => {
+            const availableVoices = synth.getVoices();
+            // Log detailed information for each available voice
+            availableVoices.forEach((voice, index) => {
+                console.log(`Voice ${index + 1}:`, {
+                    name: voice.name,
+                    lang: voice.lang,
+                    voiceURI: voice.voiceURI,
+                    localService: voice.localService,
+                    default: voice.default
+                });
+            });
             setVoices(availableVoices);
 
-            // Preselect a specific voice
-            const defaultVoice = availableVoices.find(voice => voice.name === 'IBM Watson - Michael');
+            // Define preferred voices
+            const preferredVoices = [
+                'Grandpa (Spanish (Spain))',
+                'Samantha',               // iOS/Safari
+                'Microsoft Zira Desktop', // Edge/Windows
+                'Microsoft David Desktop'
+            ];
 
-            setSelectedVoice(defaultVoice);
+            // Set the selected voice
+            const selected = availableVoices.find(voice => preferredVoices.includes(voice.name))
+                || availableVoices.find(voice => voice.lang === 'en-US'); // Fallback to any en-US voice
+
+            setSelectedVoice(selected);
         };
 
-        window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
+        // Load voices once they are available
+        if (synth.getVoices().length > 0) {
+            loadVoices();
+        } else {
+            synth.onvoiceschanged = loadVoices;
+        }
 
-        // Fetch voices on component mount
-        handleVoicesChanged();
-
+        // Cleanup
         return () => {
-            window.speechSynthesis.onvoiceschanged = null; // Clean up the event listener
+            synth.onvoiceschanged = null;
         };
     }, []);
 
+    // Log when selectedVoice is updated
     useEffect(() => {
-        if (isTesting && inputRef.current) {
-            inputRef.current.focus();
+        if (selectedVoice) {
+            console.log("Selected Voice:", selectedVoice);
         }
-    }, [isTesting]);
+    }, [selectedVoice]);
 
 
     // useEffect(() => {
@@ -410,10 +475,10 @@ const Page = () => {
                                 placeholder=""
                                 ref={inputRef}
                                 spellCheck="false"
-                                autoComplete="off" 
-                     
-                                autoCorrect="off" 
-                                autoCapitalize="off" 
+                                autoComplete="off"
+
+                                autoCorrect="off"
+                                autoCapitalize="off"
                             />
                             {userInput && (
                                 <button className={styles.clearButton} onClick={handleClearInput}>

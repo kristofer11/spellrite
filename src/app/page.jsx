@@ -60,83 +60,90 @@ export default function Home() {
                     </li> */}
 
                 </ul>
-                <ul
-                    className={styles.testButtonList}
-                    style={{
-                        listStyleType: "none",
-                        paddingLeft: 0
-                    }}>
-                    <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('States Test 1-10')} className={styles.testButton} >
-                                States 1-10
-                            </button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('States Test 11-20')} className={styles.testButton} >
-                                States 11-20
-                            </button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('States Test 21-30')} className={styles.testButton} >
-                                States 21-30
-                            </button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('States Test 31-40')} className={styles.testButton} >
-                                States 31-40
-                            </button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('States Test 41-50')} className={styles.testButton} >
-                                States 41-50
-                            </button>
-                        </Link>
-                    </li>
-                    {/* <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('Spelling Test T-4')} className={styles.testButton} >
-                                List T-4
-                            </button>
-                        </Link>
-                    </li> */}
-                    {/* <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('Spelling Test T-5')} className={styles.testButton} >
-                                List T-5
-                            </button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('Spelling Test U-1')} className={styles.testButton} >
-                                List U-1
-                            </button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('Spelling Test U-2')} className={styles.testButton} >
-                                List U-2
-                            </button>
-                        </Link>
-                    </li> */}
-                    {/* <li>
-                        <Link href="/test">
-                            <button onClick={() => handleTestSelection('Spelling Test U-3')} className={styles.testButton} >
-                                List U-3
-                            </button>
-                        </Link>
-                    </li> */}
-                </ul>
+                <div className={styles.testButtonDiv}>
+                    <ul
+                        className={styles.testButtonList}
+                        style={{
+                            listStyleType: "none",
+                            paddingLeft: 0
+                        }}>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('States Test 1-10')} className={styles.testButton} >
+                                    States 1-10
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('States Test 11-20')} className={styles.testButton} >
+                                    States 11-20
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('States Test 21-30')} className={styles.testButton} >
+                                    States 21-30
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('States Test 31-40')} className={styles.testButton} >
+                                    States 31-40
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('States Test 41-50')} className={styles.testButton} >
+                                    States 41-50
+                                </button>
+                            </Link>
+                        </li></ul>
+                    <ul className={styles.testButtonList}
+                        style={{
+                            listStyleType: "none",
+                            paddingLeft: 0
+                        }}>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Spelling Test T-4')} className={styles.testButton} >
+                                    List T-4
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Spelling Test T-5')} className={styles.testButton} >
+                                    List T-5
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Spelling Test U-1')} className={styles.testButton} >
+                                    List U-1
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Spelling Test U-2')} className={styles.testButton} >
+                                    List U-2
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Spelling Test U-3')} className={styles.testButton} >
+                                    List U-3
+                                </button>
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
                 {/* <button style={{ backgroundColor: "#00DFA2", outline: "none", border: "none", padding: "0.5rem 1rem", borderRadius: "0.5rem", fontSize: "2rem" }}><Link href='/test'>GO</Link></button> */}
 
             </main>
