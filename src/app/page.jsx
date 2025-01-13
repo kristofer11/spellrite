@@ -53,9 +53,25 @@ export default function Home() {
 
         if (currentView === "states") {
             return (
-                <div className={styles.testListDiv}>
-                    <ul className={styles.testButtonList} style={{ listStyleType: "none", paddingLeft: 0 }}>
-                        {["States 1-10", "States 11-20", "States 21-30", "States 31-40", "States 41-50", "Capitols 1-10", "Capitols 11-20", "Capitols 21-30", "Capitols 31-40", "Capitols 41-50"].map((test) => (
+                <div className={styles.testListDivStates}>
+                    <h4 className={styles.statesTitle}> States</h4>
+                    <ul className={styles.testButtonListStates} style={{ listStyleType: "none", paddingLeft: 0 }}>
+                        {["States 1-10", "States 11-20", "States 21-30", "States 31-40", "States 41-50",].map((test) => (
+                            <li key={test}>
+                                <Link href="/test">
+                                    <button
+                                        onClick={() => handleTestSelection(test)}
+                                        className={styles.testButton}
+                                    >
+                                        {test}
+                                    </button>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <h4 className={styles.statesTitle}>Capitols</h4>
+                    <ul className={styles.testButtonListStates} style={{ listStyleType: "none", paddingLeft: 0 }}>
+                        {["Capitols 1-10", "Capitols 11-20", "Capitols 21-30", "Capitols 31-40", "Capitols 41-50"].map((test) => (
                             <li key={test}>
                                 <Link href="/test">
                                     <button
