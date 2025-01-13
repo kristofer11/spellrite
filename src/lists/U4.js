@@ -1,0 +1,1 @@
+export const U4 = ["senate", "senator", "expense", "acquire", "elaborate", "elegant", "ancient", "delicious", "confidential", "conversion", "distinguish", "ignore", "ignorance", "necessity", "excellence",]

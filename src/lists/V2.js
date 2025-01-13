@@ -1,0 +1,1 @@
+export const V2 = ["mysterious", "relieve", "advise", "solemn", "apparent", "image", "imagine", "column", "independent", "evidence", "testimony", "individual", "innocence", "sacrifice", "prejudice"];

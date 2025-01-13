@@ -1,0 +1,1 @@
+export const U5 = ["social", "communicate", "reverence", "probably", "calculate", "application", "admittance", "occupy", "material", "relief", "courtesy", "respectful", "developed", "responsible", "agreement",]

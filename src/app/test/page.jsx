@@ -1,12 +1,20 @@
 "use client"
 import { useEffect, useState, useRef } from 'react';
 import { useGlobalState } from '@/GlobalStateContext.js';
-import { T4 } from '@/lists/T4.js';
-import { T5 } from '@/lists/T5.js';
-import { U1 } from '@/lists/U1.js';
-import { U2 } from '@/lists/U2.js';
-import { U3 } from '@/lists/U3.js';
-import { states1, states2, states3, states4, states5 } from '@/lists/States.js'
+// import { T4 } from '@/lists/T4.js';
+// import { T5 } from '@/lists/T5.js';
+// import { U1 } from '@/lists/U1.js';
+// import { U2 } from '@/lists/U2.js';
+// import { U3 } from '@/lists/U3.js';
+// import { U4 } from '@/lists/U4.js';
+// import { U5 } from '@lists/U5.js';
+// import { V1 } from '@lists/V1.js';
+// import { V2 } from '@lists/V1.js;'
+// import { states1, states2, states3, states4, states5 } from '@/lists/States.js';
+
+import {
+    T4, T5, U1, U2, U3, U4, U5, V1, V2, V3, W1, W2, W3, X1, X2, Y1, Y2, Z1, Z2, states1, states2, states3, states4, states5
+} from '@/lists/Lists.js';
 
 import { convertTo16kHz } from '../utils/audioConversion.js'
 
@@ -41,34 +49,74 @@ const Page = () => {
     // Usage
     const os = getOS();
     console.log(`Operating System: ${os}`);
-
+    const testMap = {
+        'Spelling Test T-4': T4,
+        'Spelling Test T-5': T5,
+        'Spelling Test U-1': U1,
+        'Spelling Test U-2': U2,
+        'Spelling Test U-3': U3,
+        'Spelling Test U-4': U4,
+        'Spelling Test U-5': U5,
+        'Spelling Test V-1': V1,
+        'Spelling Test V-2': V2,
+        'Spelling Test V-3': V3,
+        'Spelling Test W-1': W1,
+        'Spelling Test W-2': W2,
+        'Spelling Test W-3': W3,
+        'Spelling Test X-1': X1,
+        'Spelling Test X-2': X2,
+        'Spelling Test Y-1': Y1,
+        'Spelling Test Y-2': Y2,
+        'Spelling Test Z-1': Z1,
+        'Spelling Test Z-2': Z2,
+        'States Test 1-10': states1,
+        'States Test 11-20': states2,
+        'States Test 21-30': states3,
+        'States Test 31-40': states4,
+        'States Test 41-50': states5,
+    };
 
     useEffect(() => {
-        if (test === 'Spelling Test T-4') {
-            setCurrentList(T4);
-            console.log('list T4!!!!');
-        } else if (test === 'Spelling Test T-5') {
-            setCurrentList(T5);
-            console.log('list T5!!!!');
-        } else if (test === 'Spelling Test U-1') {
-            setCurrentList(U1);
-        } else if (test === 'Spelling Test U-2') {
-            setCurrentList(U2);
-        } else if (test === 'Spelling Test U-3') {
-            setCurrentList(U3);
-        } else if (test === 'States Test 1-10') {
-            setCurrentList(states1);
-        } else if (test === 'States Test 11-20') {
-            setCurrentList(states2);
-        } else if (test === 'States Test 21-30') {
-            setCurrentList(states3);
-        } else if (test === 'States Test 31-40') {
-            setCurrentList(states4);
-        } else if (test === 'States Test 41-50') {
-            setCurrentList(states5);
+        if (testMap[test]) {
+            setCurrentList(testMap[test]);
+            console.log(`Current list set for ${test}`);
         } else {
+            console.warn(`No list found for test: ${test}. Defaulting to states1.`);
             setCurrentList(states1);
         }
+        // if (test === 'Spelling Test T-4') {
+        //     setCurrentList(T4);
+        //     console.log('list T4!!!!');
+        // } else if (test === 'Spelling Test T-5') {
+        //     setCurrentList(T5);
+        //     console.log('list T5!!!!');
+        // } else if (test === 'Spelling Test U-1') {
+        //     setCurrentList(U1);
+        // } else if (test === 'Spelling Test U-2') {
+        //     setCurrentList(U2);
+        // } else if (test === 'Spelling Test U-3') {
+        //     setCurrentList(U3);
+        // } else if (test === 'States Test 1-10') {
+        //     setCurrentList(states1);
+        // } else if (test === 'States Test 11-20') {
+        //     setCurrentList(states2);
+        // } else if (test === 'States Test 21-30') {
+        //     setCurrentList(states3);
+        // } else if (test === 'States Test 31-40') {
+        //     setCurrentList(states4);
+        // } else if (test === 'States Test 41-50') {
+        //     setCurrentList(states5);
+        // } else if (test === 'Spelling Test U-4') {
+        //     setCurrentList(U4);
+        // } else if (test === 'Spelling Test U-5') {
+        //     setCurrentList(U5);
+        // } else if (test === 'Spelling Test V-1') {
+        //     setCurrentList(V1);
+        // } else if (test === 'Spelling Test V-2') {
+        //     setCurrentList(V2)
+        // } else if (test === 'Spelling Test ') { } else {
+        //     setCurrentList(states1);
+        // }
     }, [test]);
 
 
