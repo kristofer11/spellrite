@@ -477,7 +477,7 @@ const Page = () => {
                 {isTesting && <div className={styles.test}>
                     {isTesting && <div className={styles.inputContainer}>
                         <h4 className={styles.subtitle}>Type word:</h4>
-                        <div>
+                        <div className={styles.inputWrapper}>
                             <input
                                 type="text"
                                 className={styles.input}
