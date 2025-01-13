@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { GlobalStateProvider } from "@/GlobalStateContext";
+import { Analytics } from "@vercel/analytics/react"
 
 
 const geistSans = localFont({
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <GlobalStateProvider>{children}</GlobalStateProvider>
+        <Analytics />
       </body>
     </html>
   );
