@@ -48,13 +48,13 @@
     background-color: var(--secondaryDark);
     opacity: 0.5;
     outline: none;
-    border: none;
+
     padding: 0.25rem 1rem;
     border-radius: 0.5rem;
     font-size: 1.25rem;
     cursor: pointer;
     margin: 0.25rem;
-    border: 1px solid var(--primaryAccent);
+    border: 2px solid var(--primaryAccent);
 }
 
 .categoryEnabled {
@@ -80,7 +80,7 @@
     gap: 1rem;
 }
 
-.testButtonListStates{
+.testButtonListStates {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -125,12 +125,12 @@
         border-radius: 0;
     }
 
-    .testButton {
+    // .testButton {
 
-        font-size: 1rem;
-    }
+    //     font-size: 1rem;
+    // }
 
-    .categoryButton {
-        font-size: 1rem;
-    }
+    // .categoryButton {
+    //     font-size: 1rem;
+    // }
 }
