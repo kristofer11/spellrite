@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useGlobalState } from '@/GlobalStateContext.js';
 import {
-    T1, T2, T3, T4, T5, U1, U2, U3, U4, U5, V1, V2, V3, W1, W2, W3, X1, X2, Y1, Y2, Z1, Z2, states1, states2, states3, states4, states5, capitols1, capitols2, capitols3, capitols4, capitols5
+    T1, T2, T3, T4, T5, U1, U2, U3, U4, U5, V1, V2, V3, W1, W2, W3, X1, X2, Y1, Y2, Z1, Z2, states1, states2, states3, states4, states5, capitals1, capitals2, capitals3, capitals4, capitals5
 } from '@/lists/Lists.js';
 
 import { convertTo16kHz } from '../utils/audioConversion.js'
@@ -61,16 +61,16 @@ const Page = () => {
         'Spelling Test Y-2': Y2,
         'Spelling Test Z-1': Z1,
         'Spelling Test Z-2': Z2,
-        'States Test 1-10': states1,
-        'States Test 11-20': states2,
-        'States Test 21-30': states3,
-        'States Test 31-40': states4,
-        'States Test 41-50': states5,
-        'Capitols 1-10': capitols1,
-        'Capitols 11-20': capitols2,
-        'Capitols 21-30': capitols3,
-        'Capitols 31-40': capitols4,
-        'Capitols 41-50': capitols5,
+        'States 1-10': states1,
+        'States 11-20': states2,
+        'States 21-30': states3,
+        'States 31-40': states4,
+        'States 41-50': states5,
+        'Capitals 1-10': capitals1,
+        'Capitals 11-20': capitals2,
+        'Capitals 21-30': capitals3,
+        'Capitals 31-40': capitals4,
+        'Capitals 41-50': capitals5,
     };
 
     useEffect(() => {

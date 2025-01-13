@@ -156,7 +156,7 @@ export const states5 = [
     'Wyoming'
 ];
 
-export const capitols1 = [
+export const capitals1 = [
     "Montgomery",
     "Juneau",
     "Phoenix",
@@ -169,7 +169,7 @@ export const capitols1 = [
     "Atlanta",
 ];
 
-export const capitols2 = [
+export const capitals2 = [
     "Honolulu",
     "Boise",
     "Springfield",
@@ -182,7 +182,7 @@ export const capitols2 = [
     "Annapolis",
 ];
 
-export const capitols3 = [
+export const capitals3 = [
     "Boston",
     "Lansing",
     "St. Paul",
@@ -195,7 +195,7 @@ export const capitols3 = [
     "Trenton",
 ];
 
-export const capitols4 = [
+export const capitals4 = [
     "Santa Fe",
     "Albany",
     "Raleigh",
@@ -208,7 +208,7 @@ export const capitols4 = [
     "Columbia",
 ];
 
-export const capitols5 = [
+export const capitals5 = [
     "Pierre",
     "Nashville",
     "Austin",
