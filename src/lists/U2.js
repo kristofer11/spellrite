@@ -1,1 +1,0 @@
-export const U2 = ['yield', 'siege', 'achieve', 'receive', 'conceit', 'vein', 'foreign', 'describe', 'response', 'rebellious', 'neutral', 'suggest', 'penalize', 'unfortunate', 'height']

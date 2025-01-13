@@ -1,1 +1,0 @@
-export const U1 = ['conserve', 'survive', 'circumference', 'earliest', 'rehearse', 'adjourn', 'dropped', 'forgetting', 'beginning', 'science', 'ceremony', 'bouquet', 'colony', 'colonies', 'argument'];

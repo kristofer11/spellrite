@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react";
 import styles from "./page.module.scss";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,10 +7,72 @@ import { useGlobalState } from '../GlobalStateContext';
 
 export default function Home() {
     const { setTest } = useGlobalState();
+    const [currentView, setCurrentView] = useState("spelling");
 
     const handleTestSelection = (testName) => {
         setTest(testName);
     };
+
+    
+
+    const renderButtons = () => {
+        if (currentView === "spelling") {
+            return (
+                <div className={styles.testListDiv}>
+                <ul className={styles.testButtonList} style={{ listStyleType: "none", paddingLeft: 0 }}>
+                    {["T-1", "T-2", "T-3", "T-4", "T-5", "U-1", "U-2", "U-3", "U-4", "U-5", "V-1", ].map((test) => (
+                        <li key={test}>
+                            <Link href="/test">
+                                <button
+                                    onClick={() => handleTestSelection(`Spelling Test ${test}`)}
+                                    className={styles.testButton}
+                                >
+                                    List {test}
+                                </button>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                <ul className={styles.testButtonList} style={{ listStyleType: "none", paddingLeft: 0 }}>
+                    {[ "V-2", "V-3", "W-1", "W-2", "W-3", "X-1", "X-2", "Y-1", "Y-2", "Z-1", "Z-2"].map((test) => (
+                        <li key={test}>
+                            <Link href="/test">
+                                <button
+                                    onClick={() => handleTestSelection(`Spelling Test ${test}`)}
+                                    className={styles.testButton}
+                                >
+                                    List {test}
+                                </button>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                </div>
+            );
+        }
+
+        if (currentView === "states") {
+            return (
+                <ul className={styles.testButtonList} style={{ listStyleType: "none", paddingLeft: 0 }}>
+                    {["States 1-10", "States 11-20", "States 21-30", "States 31-40", "States 41-50", "Capitols 1-10", "Capitols 11-20", "Capitols 21-30", "Capitols 31-40", "Capitols 41-50"].map((test) => (
+                        <li key={test}>
+                            <Link href="/test">
+                                <button
+                                    onClick={() => handleTestSelection(test)}
+                                    className={styles.testButton}
+                                >
+                                    {test}
+                                </button>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+
+        return null; // No buttons visible until a category is selected
+    };
+
 
     return (
         <div className={styles.page}>
@@ -60,12 +123,56 @@ export default function Home() {
                     </li> */}
 
                 </ul>
+
+                <div className={styles.categoryButtons}>
+                            <button
+                                onClick={() => setCurrentView("spelling")}
+                                className={`${styles.categoryButton} ${currentView === "spelling" ? styles.categoryEnabled : ""
+                                    }`}
+                            >
+                                Spelling Lists
+                            </button>
+                            <button
+                                onClick={() => setCurrentView("states")}
+                                className={`${styles.categoryButton} ${currentView === "states" ? styles.categoryEnabled : ""
+                                    }`}
+                            >
+                                States and Capitols
+                            </button>
+                        </div>
+                <div className={styles.testButtonDiv}>
+                    {renderButtons()}
+                </div>
+
+
+                {/* 
                 <div className={styles.testButtonDiv}>
                     <ul className={styles.testButtonList}
                         style={{
                             listStyleType: "none",
                             paddingLeft: 0
                         }}>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Spelling Test T-1')} className={styles.testButton} >
+                                    List T-1
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Spelling Test T-2')} className={styles.testButton} >
+                                    List T-2
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Spelling Test T-3')} className={styles.testButton} >
+                                    List T-3
+                                </button>
+                            </Link>
+                        </li>
                         <li>
                             <Link href="/test">
                                 <button onClick={() => handleTestSelection('Spelling Test T-4')} className={styles.testButton} >
@@ -241,9 +348,44 @@ export default function Home() {
                                 </button>
                             </Link>
                         </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Capitols 1-10')} className={styles.testButton} >
+                                    Capitols 1-10
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Capitols 11-20')} className={styles.testButton} >
+                                    Capitols 11-20
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Capitols 21-30')} className={styles.testButton} >
+                                    Capitols 21-30
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Capitols 31-40')} className={styles.testButton} >
+                                    Capitols 31-40
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/test">
+                                <button onClick={() => handleTestSelection('Capitols 41-50')} className={styles.testButton} >
+                                    Capitols 41-50
+                                </button>
+                            </Link>
+                        </li>
                     </ul>
 
-                </div>
+                </div> */}
                 {/* <button style={{ backgroundColor: "#00DFA2", outline: "none", border: "none", padding: "0.5rem 1rem", borderRadius: "0.5rem", fontSize: "2rem" }}><Link href='/test'>GO</Link></button> */}
 
             </main>
