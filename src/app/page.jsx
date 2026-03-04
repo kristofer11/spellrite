@@ -96,7 +96,7 @@ export default function Home() {
                 <h1>5th Grade Spelling</h1>
                 <p
                     style={{ fontSize: "1.2rem", }}
-                ><br />Check out the new SpellRight app <br />(use the code <em><strong>"THEOAKS26"</strong></em>)
+                ><br />Check out the new SpellRight app <br />(use the code <em><strong>&quot;THEOAKS26&quot;</strong></em>)
                 </p>
                 <a
                     href='https://spellright.app'
