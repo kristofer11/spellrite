@@ -86,7 +86,7 @@ export default function Home() {
             );
         }
 
-        return null; 
+        return null;
     };
 
 
@@ -94,41 +94,20 @@ export default function Home() {
         <div className={styles.page}>
             <main className={styles.main}>
                 <h1>5th Grade Spelling</h1>
-                <ul
-                    className={styles.directionsList}
-                    style={{
-                        listStyleType: "none",
-                        paddingLeft: 0
-                    }}>
-                    <li className={styles.directionItem}>
-                        <div className={styles.directionsRow}>
-                            <h3>
-                                ✓ Click on the list you want to practice.
-                            </h3>
-                        </div>
-                    </li>
-                    <li className={styles.directionItem}>
-                        <div className={styles.directionsRow}>
-                            <h3>
-                                ✓ You can either type or speak your answer.
-                            </h3>
-                            {/* <Image
-                                aria-hidden
-                                src="/assets/lacey_no_bg.png"
-                                alt="Globe icon"
-                                width={45}
-                                height={45}
-                                className={styles.directionsImg2}
-                            /> */}
-                        </div>
+                <p
+                    style={{ fontSize: "1.2rem", }}
+                ><br />Check out the new SpellRight app <br />(use the code <em><strong>"THEOAKS26"</strong></em>)
+                </p>
+                <a
+                    href='https://spellright.app'
+                    target='_blank'
+                >
+                    <button className={styles.linkButton}>
 
-                    </li>
-                    {/* <li className={styles.directionItem}>
-                        If you are using a phone, you may need to give your browser speech recognition permissions to use the speech option.
-                    </li> */}
+                        <em>Go to the new site!</em>
 
-                </ul>
-
+                    </button>
+                </a>
                 <div className={styles.categoryButtons}>
                     <button
                         onClick={() => setCurrentView("spelling")}
